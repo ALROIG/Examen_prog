@@ -1,0 +1,50 @@
+.btn {
+  width: 100%;
+  background-color: rgba(73, 35, 35, 0.5);
+  border: 2px solid;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
+  margin: 12px 1px;
+  border-radius: 25px;
+
+}
+
+.menu {
+  text-align: center;
+  margin-bottom: 10px;
+  // margin-top: -33px;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  color: white;
+  width: 143px;
+  max-height: 100%;
+}
+
+.img {
+  height: 100px;
+  width: 300px;
+}
+
+//**********************************************************************************************
+//Rgb del fondo
+
+
+
+
+.bg-image {
+
+  --background: url('https://w0.peakpx.com/wallpaper/642/990/HD-wallpaper-neon-long-frame-amoled-black-border-dark-light-one-plus-oneplus-samsung-smoke-xiaomi.jpg') center no-repeat;
+
+
+
+
+}
+
+.title {
+  text-align: right;
+  margin-top: 10px;
+}

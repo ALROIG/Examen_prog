@@ -1,0 +1,25 @@
+<ion-content>
+
+  <body>
+    <div class="login-box">
+      <fieldset style="border-radius: 10px; color: white;">
+      <h1>Bienvenidos al Trip Zone</h1>
+      <form (submit)="validarLogin()" [formGroup]="formLogin">
+        <div class="textbox">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <input type="text" placeholder="Usuario" formControlName="userName">
+        </div>
+        <div class="textbox">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          <input type="password" placeholder="Contraseña" name="" formControlName="password">
+        </div>
+        <span style="color: red; font-size: 18px;" id="demo"></span>
+        <button class="btn" type="submit">Iniciar Sesion</button>
+        <input class="btn" type="button" name="" value="Soy Administrador" routerLink="/admin">
+      </form>
+    </fieldset>
+    </div>
+    <div class="underlay-photo"></div>
+    <div class="underlay-black"></div>
+  </body>
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill="clear" routerLink="/usuarios" style="position:absolute; z-index:1; margin-top: -15px;">
+      <ion-icon style="color: white;" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title class="title">Editar Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-image">
+  <form (submit)="editarUsuario()" [formGroup]="formEditarUsuario" style="text-align: justify;">
+    <fieldset>
+      <legend style="font-size: 30px;"> Editar Usuario</legend>
+      <p>
+        <label for="name">Nombre Completo: </label>
+        <input type="text" formControlName="name" id="name" value="{{ usuario?.name }}">
+      </p>
+      <p>
+        <label for="userName">Nombre de Usuario: </label>
+        <input type="text" formControlName="userName" placeholder="Nombre de Usuario" id="userName" value="{{ usuario?.userName }}">
+      </p>
+      <p>
+        <label for="password">Contraseña: </label>
+        <input type="text" formControlName="password" placeholder="Contraseña" id="password"
+          value="{{ usuario?.password }}">
+      </p>
+      <p>
+        <label for="edad">Edad: </label>
+        <input type="text" formControlName="edad" placeholder="18" id="edad" value="{{ usuario?.edad }}">
+      </p>
+      <p>
+        <label for="email">Correo electronico: </label>
+        <input type="text" formControlName="email" placeholder="correo@ejemplo.cl" id="email" value="{{ usuario?.email }}">
+      </p>
+      <p>
+        <label for="region">Región: </label>
+        <input type="text" formControlName="region" placeholder="Región" id="region" value="{{ usuario?.region }}">
+      </p>
+      <p>
+        <label for="comuna">Comuna: </label>
+        <input type="text" formControlName="comuna" placeholder="Comuna" id="comuna" value="{{ usuario?.comuna }}">
+      </p>
+      <p>
+        <label for="direccion">Dirección: </label>
+        <input type="text" formControlName="direccion" id="direccion" value="{{ usuario?.direccion }}">
+      </p>
+
+      <button class="btn" type="submit" routerLink="/usuarios">Enviar</button>
+    </fieldset>
+  </form>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill="clear" routerLink="/admin">
+      <ion-icon style="color: white;" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <button class="btn" style="float: right;" routerLink="/agregar-usuario">Agregar Usuario
+    </button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-image">
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let usuario of usuarios">
+        <ion-card class="card">
+          <fieldset style="border-radius: 10px; color: white;">
+          <ion-card-header>
+            <ion-card-title>{{usuario.name}}</ion-card-title>
+            <ion-card-title>{{usuario.email}}</ion-card-title>
+          </ion-card-header>
+          <button class="btn" [routerLink]="['/editar-usuario', usuario.id]" >Editar Usuario</button>
+          <button class="btn" (click)="eliminarUsuario(usuario.id)" style="margin-top: -10px;">Eliminar Usuario</button>
+        </fieldset>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

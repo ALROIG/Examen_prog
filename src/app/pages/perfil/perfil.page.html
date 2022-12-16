@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill="clear" routerLink="/home" style="position:absolute; z-index:1; margin-top: -15px;">
+      <ion-icon style="color: white;" name="arrow-back-outline"></ion-icon>
+    </ion-button>
+    <ion-title class="title">Mi perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="bg-image ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card class="card">
+          <fieldset style="border-radius: 10px; color: white;">
+            <ion-card-header>
+
+              <ion-card-title>Bienvenid@ {{ usuario?.name }}</ion-card-title>
+              <ion-card-subtitle>Bienvenid@ {{ usuario?.userName }}</ion-card-subtitle>
+
+              <ion-card-title>Correo Electronico:</ion-card-title>
+              <ion-card-subtitle>{{ usuario?.email }}</ion-card-subtitle>
+
+              <ion-card-title>Edad:</ion-card-title>
+              <ion-card-subtitle>{{ usuario?.edad }}</ion-card-subtitle>
+
+              <ion-card-title>Dirección Particular:</ion-card-title>
+              <ion-card-subtitle>{{ usuario?.direccion }}</ion-card-subtitle>
+
+            </ion-card-header>
+            <button class="btn" [routerLink]="['/editar-perfil', usuario?.id]">Editar Perfil</button>
+          </fieldset>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
