@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FireStoreService } from 'src/app/Servicios/fire-store.service';
+import { LoginService } from 'src/app/Servicios/login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginPage implements OnInit {
     public dbUsuarios: FireStoreService,
     public router: Router,
     public fb: FormBuilder,
+    public vl: LoginService,
   ) { }
 
   ngOnInit() {
@@ -25,29 +27,16 @@ export class LoginPage implements OnInit {
     })
   }
 
-  validarLogin(){
-    let userName = this.formLogin.value.userName;
-    let password = this.formLogin.value.password;
-
-    var expresion= /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-
-    this.dbUsuarios.getUsuario().subscribe((data: any) => {
-      data.forEach((usuario: any) => {
-        if (userName == usuario.userName && password == usuario.password){
-          localStorage.setItem("id", usuario.id)
-          this.router.navigate(['home'])
-        }
-        else if ( userName ==="" || password===""  ) { 
-          document.getElementById("demo").innerHTML = "Todos los campos son obligatorios.";
-          return false
-        }
-        else if (!expresion.test(password.value)){ 
-          document.getElementById("demo").innerHTML = "Usuario o contraseña incorrectos. Reintentelo.";
-          return false
-        }
-      })
-    })
+  login(){
+    let res = this.vl.validarLogin(this.formLogin.value)
+    if (!res){
+      localStorage.clear()
+    }
+    else{
+      this.router.navigate(['home'])
+    }
   }
+
   ionViewDidEnter(){
     localStorage.clear()
   }

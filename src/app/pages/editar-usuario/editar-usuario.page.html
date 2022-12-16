@@ -12,37 +12,36 @@
     <fieldset>
       <legend style="font-size: 30px;"> Editar Usuario</legend>
       <p>
-        <label for="name">Nombre Completo: </label>
-        <input type="text" formControlName="name" id="name" value="{{ usuario?.name }}">
+        <label>Nombre Completo: </label>
+        <input type="text" formControlName="name" value="{{ usuario?.name }}">
       </p>
       <p>
-        <label for="userName">Nombre de Usuario: </label>
-        <input type="text" formControlName="userName" placeholder="Nombre de Usuario" id="userName" value="{{ usuario?.userName }}">
+        <label>Nombre de Usuario: </label>
+        <input type="text" formControlName="userName" placeholder="Nombre de Usuario" value="{{ usuario?.userName }}">
       </p>
       <p>
-        <label for="password">Contraseña: </label>
-        <input type="text" formControlName="password" placeholder="Contraseña" id="password"
-          value="{{ usuario?.password }}">
+        <label>Contraseña: </label>
+        <input type="text" formControlName="password" placeholder="Contraseña" value="{{ usuario?.password }}">
       </p>
       <p>
-        <label for="edad">Edad: </label>
-        <input type="text" formControlName="edad" placeholder="18" id="edad" value="{{ usuario?.edad }}">
+        <label>Edad: </label>
+        <input type="text" formControlName="edad" placeholder="18" value="{{ usuario?.edad }}">
       </p>
       <p>
-        <label for="email">Correo electronico: </label>
-        <input type="text" formControlName="email" placeholder="correo@ejemplo.cl" id="email" value="{{ usuario?.email }}">
+        <label>Correo electronico: </label>
+        <input type="text" formControlName="email" placeholder="correo@ejemplo.cl" value="{{ usuario?.email }}">
       </p>
       <p>
-        <label for="region">Región: </label>
-        <input type="text" formControlName="region" placeholder="Región" id="region" value="{{ usuario?.region }}">
+        <label>Región: </label>
+        <input type="text" formControlName="region" placeholder="Región" value="{{ usuario?.region }}">
       </p>
       <p>
-        <label for="comuna">Comuna: </label>
-        <input type="text" formControlName="comuna" placeholder="Comuna" id="comuna" value="{{ usuario?.comuna }}">
+        <label>Comuna: </label>
+        <input type="text" formControlName="comuna" placeholder="Comuna" value="{{ usuario?.comuna }}">
       </p>
       <p>
-        <label for="direccion">Dirección: </label>
-        <input type="text" formControlName="direccion" id="direccion" value="{{ usuario?.direccion }}">
+        <label>Dirección: </label>
+        <input type="text" formControlName="direccion" value="{{ usuario?.direccion }}">
       </p>
 
       <button class="btn" type="submit" routerLink="/usuarios">Enviar</button>

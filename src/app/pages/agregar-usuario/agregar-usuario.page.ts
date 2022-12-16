@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { RouteEntry } from '@ionic/core';
 import { FireStoreService } from 'src/app/Servicios/fire-store.service';
 
 @Component({
@@ -13,7 +15,8 @@ export class AgregarUsuarioPage implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    public dbUsuarios: FireStoreService
+    public dbUsuarios: FireStoreService,
+    public router: Router
   ) { }
 
   ngOnInit() {
@@ -25,13 +28,19 @@ export class AgregarUsuarioPage implements OnInit {
       email: ['', [Validators.required, Validators.minLength(6), Validators.email]],
       region: ['', [Validators.required, Validators.minLength(3)]],
       comuna: ['', [Validators.required, Validators.minLength(3)]],
-      direccion: ['', [Validators.required, Validators.minLength(3)]]
+      direccion: ['', [Validators.required, Validators.minLength(3)]],
+      admin: [false],
     })
   }
 
   crearUsuario(){
     console.log(this.formNuevoUsuario.value);
     this.dbUsuarios.agregarUsuario(this.formNuevoUsuario.value)
+    this.router.navigate(['usuarios'])
+  }
+
+  ionViewDidEnter(){
+    this.formNuevoUsuario.reset()
   }
 
 }

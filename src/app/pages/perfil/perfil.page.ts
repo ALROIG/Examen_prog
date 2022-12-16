@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FireStoreService } from 'src/app/Servicios/fire-store.service';
-import { StorageService } from 'src/app/Servicios/storage.service';
 
 @Component({
   selector: 'app-perfil',

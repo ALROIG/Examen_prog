@@ -20,8 +20,9 @@ export class EditarUsuarioPage implements OnInit {
     comuna: ['', [Validators.required, Validators.minLength(3)]],
     direccion: ['', [Validators.required, Validators.minLength(3)]]
   });
+  
   usuario: any;
-  idUsuario: any;
+  idUsuario: string;
 
   constructor(
     private fb: FormBuilder,
@@ -40,6 +41,8 @@ export class EditarUsuarioPage implements OnInit {
 
   editarUsuario() {
     this.dbUsuarios.editarUsuario(this.idUsuario, this.formEditarUsuario.value)
+    console.log(this.formEditarUsuario.value);
+    
   }
 
 }

@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { StorageService } from '../Servicios/storage.service';
-
 
 @Component({
   selector: 'app-home',
